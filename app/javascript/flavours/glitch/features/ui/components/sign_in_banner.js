@@ -18,7 +18,7 @@ const SignInBanner = () => {
 
   if (registrationsOpen) {
     signupButton = (
-      <a href=signupLink className='button button--block button-tertiary'>
+      <a href='{signupLink}' className='button button--block button-tertiary'>
         <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
       </a>
     );
@@ -34,7 +34,7 @@ const SignInBanner = () => {
     <div className='sign-in-banner'>
 
       <p><FormattedMessage id='sign_in_banner.text' defaultMessage='Sign in to follow profiles or hashtags, favourite, share and reply to posts, or interact from your account on a different server.' /></p>
-      <a href=signinLink className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+      <a href='{signinLink}' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
       {signupButton}
     </div>
   );
