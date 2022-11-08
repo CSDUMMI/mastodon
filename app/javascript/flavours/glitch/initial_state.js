@@ -156,6 +156,6 @@ export const useSystemEmojiFont = getMeta('system_emoji_font');
 
 // Babka-specific settings
 export const registrationsLink = getMeta("registrations_link")
-export const signinLink = getMeta("signinLink")
+export const loginLink = getMeta("login_link")
 
 export default initialState;
