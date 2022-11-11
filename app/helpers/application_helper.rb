@@ -199,6 +199,9 @@ module ApplicationHelper
       text: [params[:title], params[:text], params[:url]].compact.join(' '),
     }
 
+    state_params[:OMNIAUTH_ONLY]  = ENV["OMNIAUTH_ONLY"]
+    state_params[:REGISTRATIONS_REDIRECT_URI] = ENV["REGISTRATIONS_REDIRECT_URI]
+
     permit_visibilities = %w(public unlisted private direct)
     default_privacy     = current_account&.user&.setting_default_privacy
     permit_visibilities.shift(permit_visibilities.index(default_privacy) + 1) if default_privacy.present?
