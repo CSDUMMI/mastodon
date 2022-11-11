@@ -198,7 +198,7 @@ module ApplicationHelper
       settings: {},
       text: [params[:title], params[:text], params[:url]].compact.join(' '),
       OMNIAUTH_ONLY: omniauth_only?,
-      REGISTRATIONS_REDIRECT_URI: ENV.REGISTRATIONS_REDIRECT_URI,
+      REGISTRATIONS_REDIRECT_URI: ENV['REGISTRATIONS_REDIRECT_URI'],
     }
 
     permit_visibilities = %w(public unlisted private direct)
