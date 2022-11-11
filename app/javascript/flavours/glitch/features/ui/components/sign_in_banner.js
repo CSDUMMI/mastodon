@@ -5,7 +5,7 @@
 import React, { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useDispatch } from 'react-redux';
-import { registrationsOpen, registrationsLink, loginLink } from 'flavours/glitch/initial_state';
+import { registrationsOpen, OMNIAUTH_ONLY, REGISTRATIONS_REDIRECT_URI } from 'flavours/glitch/initial_state';
 import { openModal } from 'flavours/glitch/actions/modal';
 
 const SignInBanner = () => {
@@ -17,8 +17,8 @@ const SignInBanner = () => {
   );
 
   let signupButton;
-  let signupLink = registrationsLink ? registrationsLink : '/auth/sign_up'
-  let signinLink = loginLink ? loginLink : '/auth/sign_in'
+  let signupLink = OMNIAUTH_ONLY ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up"
+  let signinLink =OMNIAUTH_ONLY ? "https://mstdn.test.emacsen.net/auth/auth/openid_connect" : "/auth/sign_in"
 
   if (registrationsOpen) {
     signupButton = (
