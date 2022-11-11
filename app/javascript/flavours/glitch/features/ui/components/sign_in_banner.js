@@ -14,7 +14,10 @@ const SignInBanner = () => {
 
   let signupButton;
   let signupLink = OMNIAUTH_ONLY ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up"
-  let signinLink =OMNIAUTH_ONLY ? "https://mstdn.test.emacsen.net/auth/auth/openid_connect" : "/auth/sign_in"
+  let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in"
+
+  console.log(signupLink)
+  console.log(signinLink)
 
   if (registrationsOpen) {
     signupButton = (
