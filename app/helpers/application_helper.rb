@@ -204,9 +204,6 @@ module ApplicationHelper
     permit_visibilities.shift(permit_visibilities.index(default_privacy) + 1) if default_privacy.present?
     state_params[:visibility] = params[:visibility] if permit_visibilities.include? params[:visibility]
 
-    state_params[:OMNIAUTH_ONLY] = omniauth_only?
-    state_params[:REGISTRATIONS_REDIRECT_URI] = ENV['REGISTRATIONS_REDIRECT_URI']
-
     if user_signed_in? && current_user.functional?
       state_params[:settings]          = state_params[:settings].merge(Web::Setting.find_by(user: current_user)&.data || {})
       state_params[:push_subscription] = current_account.user.web_push_subscription(current_session)
