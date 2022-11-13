@@ -121,7 +121,6 @@ class InteractionModal extends React.PureComponent {
     let signupButton;
     let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
     let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
-    let signinAttrs = "rel='nofollow' data-method='post'"
 
     if (registrationsOpen) {
       signupButton = (
@@ -147,7 +146,7 @@ class InteractionModal extends React.PureComponent {
         <div className='interaction-modal__choices'>
           <div className='interaction-modal__choices__choice'>
             <h3><FormattedMessage id='interaction_modal.on_this_server' defaultMessage='On this server' /></h3>
-            <a href='{signinLink}' {signinAttrs} className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+            <a href='{signinLink}' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
             {signupButton}
           </div>
 
