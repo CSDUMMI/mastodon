@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from 'flavours/glitch/components/logo';
 import { Link, withRouter } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { registrationsOpen, me, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
+import { registrationsOpen, me, OMNIAUTH_ONLY, REGISTRATIONS_REDIRECT_URI } from 'flavours/glitch/initial_state';
 import Avatar from 'flavours/glitch/components/avatar';
 import Permalink from 'flavours/glitch/components/permalink';
 import PropTypes from 'prop-types';
@@ -41,6 +41,8 @@ class Header extends React.PureComponent {
     const { location, openClosedRegistrationsModal } = this.props;
 
     let content;
+    let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
+    let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
 
     if(OMNIAUTH_ONLY && !signedIn) {
         content = (
@@ -66,6 +68,13 @@ class Header extends React.PureComponent {
           </>
         );
       }
+
+      content = (
+        <>
+          <a href='{signinLink}' className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+          <a href={registrationsOpen ? '{signupLink' : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
+        </>
+      );
     }
 
     return (
