@@ -71,7 +71,7 @@ class Header extends React.PureComponent {
       content = (
         <>
           <a href='{signinLink}' className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
-          <a href={registrationsOpen ? '{signupLink' : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
+          <a href={registrationsOpen ? signupLink : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
         </>
       );
     }
