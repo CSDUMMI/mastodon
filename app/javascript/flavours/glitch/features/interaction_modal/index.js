@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { registrationsOpen } from 'flavours/glitch/initial_state';
+import { registrationsOpen, OMNIAUTH_ONLY, REGISTRATIONS_REDIRECT_URI } from 'flavours/glitch/initial_state';
 import { connect } from 'react-redux';
 import Icon from 'flavours/glitch/components/icon';
 import classNames from 'classnames';
@@ -119,10 +119,12 @@ class InteractionModal extends React.PureComponent {
     }
 
     let signupButton;
+    let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
+    let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
 
     if (registrationsOpen) {
       signupButton = (
-        <a href='/auth/sign_up' className='button button--block button-tertiary'>
+        <a href='{signupLink}' className='button button--block button-tertiary'>
           <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
         </a>
       );
@@ -144,7 +146,7 @@ class InteractionModal extends React.PureComponent {
         <div className='interaction-modal__choices'>
           <div className='interaction-modal__choices__choice'>
             <h3><FormattedMessage id='interaction_modal.on_this_server' defaultMessage='On this server' /></h3>
-            <a href='/auth/sign_in' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+            <a href='{signinLink}' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
             {signupButton}
           </div>
 
