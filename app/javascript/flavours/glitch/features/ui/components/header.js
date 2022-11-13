@@ -43,7 +43,6 @@ class Header extends React.PureComponent {
     let content;
     let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
     let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
-    let signinAttrs = "rel='nofollow' data-method='post'"
 
     if (signedIn) {
       content = (
@@ -71,7 +70,7 @@ class Header extends React.PureComponent {
 
       content = (
         <>
-          <a href={signinLink} {OMNIAUTH_ONLY ? signinAttrs : '' } className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+          <a href={signinLink} data-method={OMNIAUTH_ONLY ? 'post' : 'get' } rel={OMNIAUTH_ONLY ? 'nofollow' : '' } className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
           <a href={registrationsOpen ? signupLink : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
         </>
       );
