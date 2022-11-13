@@ -17,8 +17,6 @@ const SignInBanner = () => {
   );
 
   let signupButton;
-  let signupLink = REGISTRATIONS_REDIRECT_URI
-  let signinLink = "/auth/auth/openid_connect"
 
   console.log(OMNIAUTH_ONLY)
   console.log(REGISTRATIONS_REDIRECT_URI)
