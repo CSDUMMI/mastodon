@@ -50,8 +50,7 @@ gem 'doorkeeper', '~> 5.6'
 gem 'ed25519', '~> 1.3'
 gem 'fast_blank', '~> 1.0'
 gem 'fastimage'
-gem 'hiredis', '~> 0.6'
-gem 'redis-namespace', '~> 1.10'
+gem 'redis-namespace', '~> 1.9'
 gem 'htmlentities', '~> 4.3'
 gem 'http', '~> 5.1'
 gem 'http_accept_language', '~> 2.1'
@@ -73,8 +72,13 @@ gem 'rack-attack', '~> 6.6'
 gem 'rack-cors', '~> 1.1', require: 'rack/cors'
 gem 'rails-i18n', '~> 6.0'
 gem 'rails-settings-cached', '~> 0.6'
+<<<<<<< HEAD
 gem 'redcarpet', '~> 3.6'
 gem 'redis', '~> 4.5', require: ['redis', 'redis/connection/hiredis']
+=======
+gem 'redcarpet', '~> 3.5'
+gem 'redis', '~> 4.5'
+>>>>>>> 169e8e19c (Eradicate hiredis)
 gem 'mario-redis-lock', '~> 1.2', require: 'redis_lock'
 gem 'rqrcode', '~> 2.1'
 gem 'ruby-progressbar', '~> 1.11'

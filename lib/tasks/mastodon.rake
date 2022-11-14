@@ -1,3 +1,4 @@
+# coding: utf-8
 # frozen_string_literal: true
 
 require 'tty-prompt'
@@ -124,7 +125,6 @@ namespace :mastodon do
           host: env['REDIS_HOST'],
           port: env['REDIS_PORT'],
           password: env['REDIS_PASSWORD'],
-          driver: :hiredis,
         }
 
         begin
