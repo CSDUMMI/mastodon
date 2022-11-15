@@ -40,8 +40,11 @@ class Auth::SessionsController < Devise::SessionsController
     session.delete(:challenge_passed_at)
     flash.delete(:notice)
 
-    store_location_for(:user, tmp_stored_location) if continue_after?
-
+    if ENV["OMNIAUTH_ONLY"] == 'true'
+      store_location_for(:user, ENV["
+    else
+      store_location_for(:user, tmp_stored_location) if continue_after?
+    end
   end
 
   def webauthn_options
