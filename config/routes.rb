@@ -67,8 +67,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/invite/:invite_code', to: 'auth/registrations#new', as: :public_invite
 
-    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-
     namespace :auth do
       resource :setup, only: [:show, :update], controller: :setup
       resource :challenge, only: [:create], controller: :challenges
