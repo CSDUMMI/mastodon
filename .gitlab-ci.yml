@@ -8,7 +8,7 @@ publish_image:
     - apk add podman
   script:
     - echo "$CI_COMMIT_TAG" > VERSION
-    - podman build -t "$REGISTRY/$OWNER/mastodon-babka:$CI_COMMIT_TAG" .
+    - podman build --format=docker -t "$REGISTRY/$OWNER/mastodon-babka:$CI_COMMIT_TAG" .
     - podman push "$REGISTRY/$OWNER/mastodon-babka:$CI_COMMIT_TAG"
 
   only:
