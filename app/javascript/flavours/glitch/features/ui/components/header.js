@@ -42,12 +42,14 @@ class Header extends React.PureComponent {
 
     let content;
 
-    if(OMNIAUTH_ONLY) {
+    if(OMNIAUTH_ONLY && !signedIn) {
         content = (
           <>
-          <a href="/auth/auth/openid_connect" data-method="post" rel="nofollow" className="button"><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
+          <a href='/auth/auth/openid_connect' data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
           </>
         )
+
+<a class="button button-openid_connect" rel="nofollow" data-method="post" href="/auth/auth/openid_connect">Login to Babka</a>
     } else {
 
       if (signedIn) {
