@@ -41,16 +41,13 @@ class Header extends React.PureComponent {
     const { location, openClosedRegistrationsModal } = this.props;
 
     let content;
-    let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
-    let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
 
-    if(OMNIAUTH_ONLY && !signedIn) {
+    if(OMNIAUTH_ONLY) {
         content = (
           <>
-          <a href={SIGN_IN_LINK} data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
+          <a href="/auth/auth/openid_connect" data-method="post" rel="nofollow" className="button"><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
           </>
         )
-
     } else {
 
       if (signedIn) {
@@ -68,13 +65,6 @@ class Header extends React.PureComponent {
           </>
         );
       }
-
-      content = (
-        <>
-          <a href={signinLink} data-method={OMNIAUTH_ONLY ? 'post' : 'get' } rel={OMNIAUTH_ONLY ? 'nofollow' : '' } className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
-          <a href={registrationsOpen ? signupLink : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
-        </>
-      );
     }
 
     return (
