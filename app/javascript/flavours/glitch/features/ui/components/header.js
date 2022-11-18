@@ -49,7 +49,7 @@ class Header extends React.PureComponent {
           </>
         )
 
-<a class="button button-openid_connect" rel="nofollow" data-method="post" href="/auth/auth/openid_connect">Login to Babka</a>
+
     } else {
 
       if (signedIn) {
