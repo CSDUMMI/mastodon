@@ -41,39 +41,30 @@ class Header extends React.PureComponent {
     const { location, openClosedRegistrationsModal } = this.props;
 
     let content;
-    let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
-    let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
 
-    if (signedIn) {
-      content = (
-        <>
-          {location.pathname !== '/publish' && <Link to='/publish' className='button'><FormattedMessage id='compose_form.publish_form' defaultMessage='Publish' /></Link>}
-          <Account />
-        </>
-      );
+    if(OMNIAUTH_ONLY) {
+        content = (
+          <>
+          <a href="/auth/auth/openid_connect" data-method="post" rel="nofollow" className="button"><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
+          </>
+        )
     } else {
-      let signupButton;
 
-      if (registrationsOpen) {
-        signupButton = (
-          <a href='/auth/sign_up' className='button button-tertiary'>
-            <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
-          </a>
+      if (signedIn) {
+        content = (
+          <>
+            {location.pathname !== '/publish' && <Link to='/publish' className='button'><FormattedMessage id='compose_form.publish' defaultMessage='Publish' /></Link>}
+            <Account />
+          </>
         );
       } else {
-        signupButton = (
-          <button className='button button-tertiary' onClick={openClosedRegistrationsModal}>
-            <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
-          </button>
+        content = (
+          <>
+            <a href="/auth/sign_in" className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+            <a href={registrationsOpen ? "/auth/sign_up" : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
+          </>
         );
       }
-
-      content = (
-        <>
-          <a href={signinLink} data-method={OMNIAUTH_ONLY ? 'post' : 'get' } rel={OMNIAUTH_ONLY ? 'nofollow' : '' } className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
-          <a href={registrationsOpen ? signupLink : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
-        </>
-      );
     }
 
     return (
