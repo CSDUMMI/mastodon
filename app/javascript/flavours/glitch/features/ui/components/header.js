@@ -49,7 +49,6 @@ class Header extends React.PureComponent {
           </>
         )
 
-
     } else {
 
       if (signedIn) {
