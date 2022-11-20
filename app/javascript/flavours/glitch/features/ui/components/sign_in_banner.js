@@ -5,7 +5,7 @@
 import React, { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useDispatch } from 'react-redux';
-import { registrationsOpen, OMNIAUTH_ONLY, REGISTRATIONS_REDIRECT_URI } from 'flavours/glitch/initial_state';
+import { registrationsOpen, OMNIAUTH_ONLY } from 'flavours/glitch/initial_state';
 import { openModal } from 'flavours/glitch/actions/modal';
 
 const SignInBanner = () => {
@@ -18,51 +18,40 @@ const SignInBanner = () => {
 
   let signupButton;
 
-  if (registrationsOpen) {
-    signupButton = (
-      <a href='/auth/sign_up' className='button button--block button-tertiary'>
-        <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
+  if(OMNIAUTH_ONLY) {
+    content = (
+      <a href='/auth/auth/openid_connect' className='button button--block button-tertiary'>
+        <FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage="Login or Register" />
       </a>
-      </>
     );
   } else {
-
-    let signupButton;
-
     if (registrationsOpen) {
       signupButton = (
-        <>
         <a href='/auth/sign_up' className='button button--block button-tertiary'>
           <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
         </a>
-        </>
       );
     } else {
       signupButton = (
-        <>
         <button className='button button--block button-tertiary' onClick={openClosedRegistrationsModal}>
           <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
         </button>
-        </>
       );
     }
 
     content = (
-        <>
-        <a href='/auth/sign_in' className='button button--block'>
-          <FormattedMessage id="sign_in_banner.sign_in" defaultMessage='Sign in' />
-        </a>
+        <a href='/auth/sign_in' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
         {signupButton}
-        </>
+      </div>
     );
   }
 
   return (
     <>
     <div className='sign-in-banner'>
-      <p><FormattedMessage id='sign_in_banner.text' defaultMessage='Sign in to follow profiles or hashtags, favourite, share and reply to posts, or interact from your account on a different server.' /></p>
-      <a href='/auth/sign_in' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
-      {signupButton}
+      <p><FormattedMessage id='sign_in_banner.text' defaultMessage='Sign in to follow profiles or hashtags, favourite, share and reply to posts, or interact from your account on a different server.' />
+      </p>
+     {content}
     </div>
     </>
   );
