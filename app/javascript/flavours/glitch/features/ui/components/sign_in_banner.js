@@ -16,8 +16,6 @@ const SignInBanner = () => {
     [dispatch],
   );
 
-  console.log("OMNIAUTH_ONLY: " + OMNIAUTH_ONLY)
-
   let content;
 
   if(OMNIAUTH_ONLY) {
