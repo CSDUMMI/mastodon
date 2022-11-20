@@ -807,6 +807,7 @@ and provided thanks to the work of the following contributors:
 * [艮 鮟鱇](mailto:ushitora_anqou@yahoo.co.jp)
 * [西小倉宏信](mailto:nishiko@mindia.jp)
 * [雨宮美羽](mailto:k737566@gmail.com)
+- [CSDUMMI](mailto:csdummi.misquality@simplelogin.co)
 
 This document is provided for informational purposes only. Since it is only updated once per release, the version you are looking at may be currently out of date. To see the full list of contributors, consider looking at the [git history](https://github.com/mastodon/mastodon/graphs/contributors) instead.
 
