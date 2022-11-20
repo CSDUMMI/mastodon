@@ -25,7 +25,7 @@ const SignInBanner = () => {
       <a href='/auth/auth/openid_connect' className='button button--block button-tertiary'>
         <FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage="Login or Register" />
       </a>
-    );;
+    );
   } else {
     if (registrationsOpen) {
       signupButton = (
@@ -42,7 +42,9 @@ const SignInBanner = () => {
     }
 
     content = (
-        <a href='/auth/sign_in' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
+        <a href='/auth/sign_in' className='button button--block'>
+          <FormattedMessage id="sign_in_banner.sign_in" defaultMessage='Sign in' />
+        </a>
         {signupButton}
       </div>
     );
