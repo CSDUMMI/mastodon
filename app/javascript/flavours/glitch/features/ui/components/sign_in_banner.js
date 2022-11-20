@@ -20,9 +20,11 @@ const SignInBanner = () => {
 
   if(OMNIAUTH_ONLY) {
     content = (
+      <>
       <a href='/auth/auth/openid_connect' className='button button--block button-tertiary'>
         <FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage="Login or Register" />
       </a>
+      </>
     );
   } else {
 
@@ -30,23 +32,29 @@ const SignInBanner = () => {
 
     if (registrationsOpen) {
       signupButton = (
+        <>
         <a href='/auth/sign_up' className='button button--block button-tertiary'>
           <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
         </a>
+        </>
       );
     } else {
       signupButton = (
+        <>
         <button className='button button--block button-tertiary' onClick={openClosedRegistrationsModal}>
           <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
         </button>
+        </>
       );
     }
 
     content = (
+        <>
         <a href='/auth/sign_in' className='button button--block'>
           <FormattedMessage id="sign_in_banner.sign_in" defaultMessage='Sign in' />
         </a>
         {signupButton}
+        </>
     );
   }
 
