@@ -18,6 +18,8 @@ const SignInBanner = () => {
 
   let signupButton;
 
+  console.log("OMNIAUTH_ONLY: " + OMNIAUTH_ONLY)
+
   if(OMNIAUTH_ONLY) {
     content = (
       <a href='/auth/auth/openid_connect' className='button button--block button-tertiary'>
