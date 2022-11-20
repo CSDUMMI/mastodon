@@ -16,8 +16,6 @@ const SignInBanner = () => {
     [dispatch],
   );
 
-  let signupButton;
-
   console.log("OMNIAUTH_ONLY: " + OMNIAUTH_ONLY)
 
   if(OMNIAUTH_ONLY) {
@@ -27,6 +25,9 @@ const SignInBanner = () => {
       </a>
     );
   } else {
+
+    let signupButton;
+
     if (registrationsOpen) {
       signupButton = (
         <a href='/auth/sign_up' className='button button--block button-tertiary'>
@@ -46,7 +47,6 @@ const SignInBanner = () => {
           <FormattedMessage id="sign_in_banner.sign_in" defaultMessage='Sign in' />
         </a>
         {signupButton}
-      </div>
     );
   }
 
