@@ -226,9 +226,11 @@ All notable changes to this project will be documented in this file.
 - Unified 'Login or Register' button for setups with OMNIAUTH_ONLY set to 'true'.
 
 ## [4.0.2-babka-2022-11-20]
+### Fixed
+- CSP error upon redirecting to an external OIDC IDP by adding OIDC_HOST variable to the permissible hosts for form actions.
+
 ### Added
-- New unified 'Login or Register' button in setups using OMNIAUTH_ONLY.
-- OIDC_HOST environment variable to be set to the host of the OIDC IDP used (as strictly as possible, as this variable is used in a CSP).
+- Unified 'Login or Register' button for setups with OMNIAUTH_ONLY set to 'true'.
 
 ## [4.0.2-babka-slim-2022-11-20]
 ### Fixed
