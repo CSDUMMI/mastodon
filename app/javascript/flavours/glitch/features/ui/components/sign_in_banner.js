@@ -18,6 +18,8 @@ const SignInBanner = () => {
 
   console.log("OMNIAUTH_ONLY: " + OMNIAUTH_ONLY)
 
+  let content;
+
   if(OMNIAUTH_ONLY) {
     content = (
       <>
