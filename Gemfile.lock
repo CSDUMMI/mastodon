@@ -21,8 +21,8 @@ GIT
 
 GIT
   remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect.git
-  revision: ab318da20b44186ae72ce26b5af46513d12cb189
-  branch: master
+  revision: dae182d07974faea3b6cfd3df512e73be7d364b8
+  ref: dae182d07974faea3b6cfd3df512e73be7d364b8
   specs:
     gitlab-omniauth-openid-connect (0.10.0)
       addressable (~> 2.7)
