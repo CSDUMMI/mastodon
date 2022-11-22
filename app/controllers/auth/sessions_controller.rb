@@ -44,7 +44,7 @@ class Auth::SessionsController < Devise::SessionsController
 
     if ENV["OMNIAUTH_ONLY"] == 'true'
       print("Redirect to " + ENV["OIDC_END_SESSION_ENDPOINT"])
-      Devise::Controllers::Helpers::after_sign_out_path(ENV["OIDC_END_SESSION_ENDPOINT"])
+      Devise::Controllers::Helpers.after_sign_out_path(ENV["OIDC_END_SESSION_ENDPOINT"])
     else
       store_location_for(:user, tmp_stored_location) if continue_after?
     end
