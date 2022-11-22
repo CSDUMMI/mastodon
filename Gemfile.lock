@@ -20,7 +20,7 @@ GIT
       warden (~> 1.2.3)
 
 GIT
-  remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect
+  remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect.git
   revision: 85a1503416c63ef57bc2cff40d25519afd5c0268
   specs:
     gitlab-omniauth-openid-connect (0.10.0)
