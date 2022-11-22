@@ -42,9 +42,7 @@ class Auth::SessionsController < Devise::SessionsController
 
 
     if ENV["OMNIAUTH_ONLY"] == 'true'
-      print(ENV["OIDC_END_SESSION_ENDPOINT"])
-      store_location_for(:user, ENV["OIDC_END_SESSION_ENDPOINT"])
-      print(stored_location_for(:user))
+      store_location_for(:user, "/auth/openid-end-session-endpoint")
     else
       store_location_for(:user, tmp_stored_location) if continue_after?
     end

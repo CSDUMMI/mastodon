@@ -74,6 +74,7 @@ Rails.application.routes.draw do
       post 'captcha_confirmation', to: 'confirmations#confirm_captcha', as: :captcha_confirmation
 
       # Mitigation of no-logout issue
+      get "openid-end-session-endpoint", to: redirect(ENV["OIDC_END_SESION_ENDPOINT"])
     end
   end
 
