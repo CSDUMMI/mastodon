@@ -40,7 +40,7 @@ end
 gem 'net-ldap', '~> 0.17'
 gem 'omniauth-cas', '~> 2.0'
 gem 'omniauth-saml', '~> 1.10'
-gem 'gitlab-omniauth-openid-connect', '~>0.10.1', require: 'omniauth_openid_connect'
+gem 'gitlab-omniauth-openid-connect', '~>0.10.0', git:"https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect", require: 'omniauth_openid_connect'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
@@ -72,13 +72,8 @@ gem 'rack-attack', '~> 6.6'
 gem 'rack-cors', '~> 1.1', require: 'rack/cors'
 gem 'rails-i18n', '~> 6.0'
 gem 'rails-settings-cached', '~> 0.6'
-<<<<<<< HEAD
-gem 'redcarpet', '~> 3.6'
-gem 'redis', '~> 4.5', require: ['redis', 'redis/connection/hiredis']
-=======
 gem 'redcarpet', '~> 3.5'
 gem 'redis', '~> 4.5'
->>>>>>> 169e8e19c (Eradicate hiredis)
 gem 'mario-redis-lock', '~> 1.2', require: 'redis_lock'
 gem 'rqrcode', '~> 2.1'
 gem 'ruby-progressbar', '~> 1.11'
