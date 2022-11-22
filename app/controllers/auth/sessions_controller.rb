@@ -41,7 +41,7 @@ class Auth::SessionsController < Devise::SessionsController
     flash.delete(:notice)
 
     if ENV["OMNIAUTH_ONLY"] == 'true'
-      store_location_for(:user, ENV["OIDC_END_SESSION_ENDPOINT"])
+      redirect_to(ENV["OIDC_END_SESSION_ENDPOINT"])
     else
       store_location_for(:user, tmp_stored_location) if continue_after?
     end
