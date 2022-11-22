@@ -70,6 +70,7 @@ Devise.setup do |config|
   # OpenID Connect Strategy
   if ENV['OIDC_ENABLED'] == 'true'
     oidc_options = {}
+    oidc_options[:logout_path] = "/auth/sign_out"
     oidc_options[:display_name] = ENV['OIDC_DISPLAY_NAME'] #OPTIONAL
     oidc_options[:issuer] = ENV['OIDC_ISSUER'] if ENV['OIDC_ISSUER'] #NEED
     oidc_options[:discovery] = ENV['OIDC_DISCOVERY'] == 'true' #OPTIONAL (default: false)
