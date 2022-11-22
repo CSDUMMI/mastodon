@@ -40,7 +40,10 @@ class Auth::SessionsController < Devise::SessionsController
     session.delete(:challenge_passed_at)
     flash.delete(:notice)
 
+    print("Sign out")
+
     if ENV["OMNIAUTH_ONLY"] == 'true'
+      print("Redirect to " + ENV["OIDC_END_SESSION_ENDPOINT"])
       store_location_for(:user, ENV["OIDC_END_SESSION_ENDPOINT"])
     else
       store_location_for(:user, tmp_stored_location) if continue_after?
