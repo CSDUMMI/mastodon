@@ -808,7 +808,7 @@ DEPENDENCIES
   fog-core (<= 2.4.0)
   fog-openstack (~> 0.3)
   fuubar (~> 2.5)
-  gitlab-omniauth-openid-connect (~> 0.10.0)!
+  gitlab-omniauth-openid-connect!
   hamlit-rails (~> 0.2)
   hcaptcha (~> 7.1)
   htmlentities (~> 4.3)
