@@ -8,8 +8,8 @@ GIT
       jwt (~> 2.0)
 
 GIT
-  remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect
-  revision: fd7b10116b39cf85edab703eb7230870dcf30f24
+  remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect.git
+  revision: 4c716343f54c1d7a825c700528b981b0703e00fc
   specs:
     gitlab-omniauth-openid-connect (0.10.0)
       addressable (~> 2.7)
