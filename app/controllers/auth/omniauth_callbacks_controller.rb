@@ -36,7 +36,7 @@ class Auth::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       last_uri = stored_location_for(:user)
 
-      print("Redirecting after sign in to " + last_uri)
+      print("Redirecting after sign in to " + (last_uri|| "nil"))
 
       last_uri || root_path
 
