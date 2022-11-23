@@ -33,7 +33,7 @@ class Auth::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def after_sign_in_path_for(resource)
     if resource.email_present?
-      last_uri = store_location_for(:user)
+      last_uri = stored_location_for(:user)
 
       last_uri || root_path
 
