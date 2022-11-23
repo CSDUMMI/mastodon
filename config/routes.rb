@@ -77,6 +77,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/end-session-endpoint" => redirect(ENV["OIDC_END_SESSION_ENDPOINT"])
+
   devise_for :users, path: 'auth', format: false, controllers: {
     omniauth_callbacks: 'auth/omniauth_callbacks',
     sessions:           'auth/sessions',
