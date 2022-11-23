@@ -45,6 +45,7 @@ class Auth::SessionsController < Devise::SessionsController
       session_key = stored_location_key_for(:user)
 
       session[session_key] = ENV["OIDC_END_SESSION_ENDPOINT"]
+      print(stored_location_for(:user))
     else
       store_location_for(:user, tmp_stored_location) if continue_after?
     end
