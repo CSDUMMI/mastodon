@@ -45,7 +45,7 @@ class Header extends React.PureComponent {
     if(OMNIAUTH_ONLY && !signedIn) {
         content = (
           <>
-          <a href='{SIGN_IN_LINK}' data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
+          <a href={SIGN_IN_LINK} data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
           </>
         )
 
