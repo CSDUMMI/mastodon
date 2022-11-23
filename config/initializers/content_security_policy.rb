@@ -41,7 +41,7 @@ if Rails.env.production?
     p.worker_src      :self, :blob, assets_host
     p.connect_src     :self, :blob, :data, Rails.configuration.x.streaming_api_base_url, *data_hosts
     p.manifest_src    :self, assets_host
-    p.form_action     :self, (ENV["OIDC_HOST"] or :self)
+    p.form_action     :self, (ENV["SSO_HOST"] or :self)
   end
 end
 
