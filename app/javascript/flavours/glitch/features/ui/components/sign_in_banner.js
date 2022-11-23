@@ -5,7 +5,7 @@
 import React, { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useDispatch } from 'react-redux';
-import { registrationsOpen, OMNIAUTH_ONLY } from 'flavours/glitch/initial_state';
+import { registrationsOpen, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
 import { openModal } from 'flavours/glitch/actions/modal';
 
 const SignInBanner = () => {
@@ -21,7 +21,7 @@ const SignInBanner = () => {
   if(OMNIAUTH_ONLY) {
     content = (
       <>
-      <a href='/auth/auth/openid_connect' data-method="post" className='button button--block button-tertiary'>
+      <a href='{SIGN_IN_LINK}' data-method="post" className='button button--block button-tertiary'>
         <FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage="Login or Register" />
       </a>
       </>

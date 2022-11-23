@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from 'flavours/glitch/components/logo';
 import { Link, withRouter } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { registrationsOpen, me, OMNIAUTH_ONLY, REGISTRATIONS_REDIRECT_URI } from 'flavours/glitch/initial_state';
+import { registrationsOpen, me, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
 import Avatar from 'flavours/glitch/components/avatar';
 import Permalink from 'flavours/glitch/components/permalink';
 import PropTypes from 'prop-types';
@@ -45,7 +45,7 @@ class Header extends React.PureComponent {
     if(OMNIAUTH_ONLY && !signedIn) {
         content = (
           <>
-          <a href='/auth/auth/openid_connect' data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
+          <a href='{SIGN_IN_LINK}' data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
           </>
         )
 

@@ -156,6 +156,6 @@ export const useSystemEmojiFont = getMeta('system_emoji_font');
 
 // Babka-specific settings
 export const OMNIAUTH_ONLY = getMeta("OMNIAUTH_ONLY")
-export const REGISTRATIONS_REDIRECT_URI = getMeta("REGISTRATIONS_REDIRECT_URI")
+export const SIGN_IN_LINK = "/auth/auth/saml/callback"
 
 export default initialState;
