@@ -21,7 +21,7 @@ const SignInBanner = () => {
   if(OMNIAUTH_ONLY) {
     content = (
       <>
-      <a href='{SIGN_IN_LINK}' data-method="post" className='button button--block button-tertiary'>
+      <a href={SIGN_IN_LINK} data-method="post" className='button button--block button-tertiary'>
         <FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage="Login or Register" />
       </a>
       </>
