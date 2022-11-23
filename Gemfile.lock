@@ -7,28 +7,6 @@ GIT
       hkdf (~> 0.2)
       jwt (~> 2.0)
 
-GIT
-  remote: https://gitlab.com/CSDUMMI/devise
-  revision: c9b4766fd5e4b560a47ec58c451538a1c76ade51
-  ref: c9b4766fd5e4b560a47ec58c451538a1c76ade51
-  specs:
-    devise (4.8.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
-
-GIT
-  remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect.git
-  revision: dae182d07974faea3b6cfd3df512e73be7d364b8
-  ref: dae182d07974faea3b6cfd3df512e73be7d364b8
-  specs:
-    gitlab-omniauth-openid-connect (0.10.0)
-      addressable (~> 2.7)
-      omniauth (>= 1.9, < 3)
-      openid_connect (~> 1.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -294,7 +272,11 @@ GEM
     fuubar (2.5.1)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
-    globalid (1.1.0)
+    gitlab-omniauth-openid-connect (0.10.0)
+      addressable (~> 2.7)
+      omniauth (>= 1.9, < 3)
+      openid_connect (~> 1.2)
+    globalid (1.0.0)
       activesupport (>= 5.0)
     hamlit (3.0.3)
       temple (>= 0.8.2)
@@ -809,7 +791,7 @@ DEPENDENCIES
   fog-core (<= 2.4.0)
   fog-openstack (~> 0.3)
   fuubar (~> 2.5)
-  gitlab-omniauth-openid-connect!
+  gitlab-omniauth-openid-connect (~> 0.10.0)
   hamlit-rails (~> 0.2)
   hcaptcha (~> 7.1)
   htmlentities (~> 4.3)
