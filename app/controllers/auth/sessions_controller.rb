@@ -42,8 +42,7 @@ class Auth::SessionsController < Devise::SessionsController
 
 
     if ENV["OMNIAUTH_ONLY"] == 'true'
-      redirect_to("/end-session-endpoint")
-      return
+      store_location_for(:user, "/end-session-endpoint")
     else
       store_location_for(:user, tmp_stored_location) if continue_after?
     end
