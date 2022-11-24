@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://gitlab.com/CSDUMMI/devise
-  revision: 76352fe0e610dea1f240eeffc675028a3d2779e1
-  ref: 76352fe0e610dea1f240eeffc675028a3d2779e1
+  revision: c389bee0aa9a8d4634427363da4f6b9d46ac4275
+  ref: c389bee0aa9a8d4634427363da4f6b9d46ac4275
   specs:
     devise (4.8.1)
       bcrypt (~> 3.0)
