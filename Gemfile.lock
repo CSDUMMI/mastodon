@@ -7,6 +7,18 @@ GIT
       hkdf (~> 0.2)
       jwt (~> 2.0)
 
+GIT
+  remote: https://gitlab.com/CSDUMMI/devise
+  revision: 7e432ec6f52087676115b7c53a3039535c69dd69
+  branch: main
+  specs:
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,8 +195,7 @@ GEM
     crass (1.0.6)
     css_parser (1.14.0)
       addressable
-    date (3.3.3)
-    debug_inspector (1.1.0)
+    debug_inspector (1.0.0)
     devise-two-factor (4.0.2)
       activesupport (< 7.1)
       attr_encrypted (>= 1.3, < 4, != 2)
