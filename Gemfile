@@ -30,7 +30,7 @@ gem 'bootsnap', '~> 1.16.0', require: false
 gem 'browser'
 gem 'charlock_holmes', '~> 0.7.7'
 gem 'chewy', '~> 7.2'
-gem 'devise', '~> 4.8', ref: '2c3d7bb36cb1f970c38545fdce30a72d43ce51a9', git: 'https://gitlab.com/CSDUMMI/devise'
+gem 'devise', '~> 4.8', ref: '250311f4ea5524d16b12458ff765647bd3ce89d2', git: 'https://gitlab.com/CSDUMMI/devise'
 gem 'devise-two-factor', '~> 4.0'
 
 group :pam_authentication, optional: true do
