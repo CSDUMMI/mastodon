@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   helper_method :use_seamless_external_login?
   helper_method :whitelist_mode?
   helper_method :omniauth_only?
+  helper_method :sso_account_settings
 
   rescue_from ActionController::ParameterMissing, Paperclip::AdapterRegistry::NoHandlerError, with: :bad_request
   rescue_from Mastodon::NotPermittedError, with: :forbidden
