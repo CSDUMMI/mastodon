@@ -24,7 +24,7 @@
     .actions
       = f.button :button, t('generic.save_changes'), type: :submit, class: 'button', disabled: current_account.suspended?
   - elsif omniauth_only?
-    %a{:href => sso_account_settings}= t('users.seamless_external_login')
+    %a{:href => sso_account_settings}= t('users.sso_account_settings')
   - else
     %p.hint= t('users.seamless_external_login')
 
