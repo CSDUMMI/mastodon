@@ -1699,4 +1699,5 @@ en:
     not_supported: This browser doesn't support security keys
     otp_required: To use security keys please enable two-factor authentication first.
     registered_on: Registered on %{date}
+    sso_account_settings: Go to your account settings
 
