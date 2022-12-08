@@ -30,7 +30,7 @@ gem 'bootsnap', '~> 1.16.0', require: false
 gem 'browser'
 gem 'charlock_holmes', '~> 0.7.7'
 gem 'chewy', '~> 7.2'
-gem 'devise', '~> 4.8', ref: 'c9b4766fd5e4b560a47ec58c451538a1c76ade51', git: 'https://gitlab.com/CSDUMMI/devise'
+gem 'devise', '~> 4.8'
 gem 'devise-two-factor', '~> 4.0'
 
 group :pam_authentication, optional: true do
@@ -40,7 +40,7 @@ end
 gem 'net-ldap', '~> 0.17'
 gem 'omniauth-cas', '~> 2.0'
 gem 'omniauth-saml', '~> 1.10'
-gem 'gitlab-omniauth-openid-connect', "~> 0.10.0", require: 'omniauth_openid_connect'
+gem 'gitlab-omniauth-openid-connect', git:"https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect", require: 'omniauth_openid_connect'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
