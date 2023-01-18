@@ -87,8 +87,8 @@ describe InstancePresenter do
   end
 
   describe '#source_url' do
-    it 'returns "https://github.com/glitch-soc/mastodon"' do
-      expect(instance_presenter.source_url).to eq('https://github.com/glitch-soc/mastodon')
+    it 'returns "https://gitlab.com/babka_net/mastodon-babka"' do
+      expect(instance_presenter.source_url).to eq('https://gitlab.com/babka_net/mastodon-babka')
     end
   end
 
