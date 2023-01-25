@@ -40,7 +40,12 @@ class Auth::SessionsController < Devise::SessionsController
     session.delete(:challenge_passed_at)
     flash.delete(:notice)
 
-    store_location_for(:user, tmp_stored_location) if continue_after?
+    location = "/logout"
+
+    location = location + URI.encode_www_form(
+      post_logout_redirect_uri: stored_location_for(:user) if continue_after?
+    )
+    store_location_for(:user, location)
 
   end
 
