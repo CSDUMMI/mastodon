@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/CSDUMMI/gitlab-omniauth-openid-connect
-  revision: 82e67df6c894fe022e5a5d1dc0643fb986abd952
+  revision: 4b8a7ee766f09f424e3a7dfad32121eb2476e8bb
   specs:
     gitlab-omniauth-openid-connect (0.10.0)
       addressable (~> 2.7)
@@ -99,8 +99,13 @@ GEM
     attr_required (1.0.1)
     awrence (1.2.1)
     aws-eventstream (1.2.0)
+<<<<<<< HEAD
     aws-partitions (1.710.0)
     aws-sdk-core (3.170.0)
+=======
+    aws-partitions (1.699.0)
+    aws-sdk-core (3.169.0)
+>>>>>>> 65593ee87 (Update revisions)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
@@ -108,7 +113,11 @@ GEM
     aws-sdk-kms (1.62.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
+<<<<<<< HEAD
     aws-sdk-s3 (1.119.0)
+=======
+    aws-sdk-s3 (1.118.0)
+>>>>>>> 65593ee87 (Update revisions)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -126,7 +135,11 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
+<<<<<<< HEAD
     bindata (2.4.15)
+=======
+    bindata (2.4.14)
+>>>>>>> 65593ee87 (Update revisions)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
     blurhash (0.1.7)
@@ -192,7 +205,8 @@ GEM
     crass (1.0.6)
     css_parser (1.14.0)
       addressable
-    debug_inspector (1.0.0)
+    date (3.3.3)
+    debug_inspector (1.1.0)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -234,9 +248,9 @@ GEM
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
-    excon (0.99.0)
+    excon (0.97.2)
     fabrication (2.30.0)
-    faker (3.1.1)
+    faker (3.1.0)
       i18n (>= 1.8.11, < 2)
     faraday (1.10.3)
       faraday-em_http (~> 1.0)
@@ -286,7 +300,7 @@ GEM
     fuubar (2.5.1)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
-    globalid (1.0.0)
+    globalid (1.0.1)
       activesupport (>= 5.0)
     hamlit (3.0.3)
       temple (>= 0.8.2)
@@ -353,7 +367,11 @@ GEM
     json-schema (3.0.0)
       addressable (>= 2.8)
     jsonapi-renderer (0.2.2)
+<<<<<<< HEAD
     jwt (2.7.0)
+=======
+    jwt (2.6.0)
+>>>>>>> 65593ee87 (Update revisions)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -393,7 +411,11 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+<<<<<<< HEAD
     mail (2.8.1)
+=======
+    mail (2.8.0.1)
+>>>>>>> 65593ee87 (Update revisions)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -413,7 +435,11 @@ GEM
     minitest (5.17.0)
     msgpack (1.6.0)
     multi_json (1.15.0)
+<<<<<<< HEAD
     multipart-post (2.3.0)
+=======
+    multipart-post (2.2.3)
+>>>>>>> 65593ee87 (Update revisions)
     net-imap (0.3.4)
       date
       net-protocol
@@ -428,7 +454,11 @@ GEM
       net-protocol
     net-ssh (7.0.1)
     nio4r (2.5.8)
+<<<<<<< HEAD
     nokogiri (1.14.1-x86_64-linux)
+=======
+    nokogiri (1.14.0-x86_64-linux)
+>>>>>>> 65593ee87 (Update revisions)
       racc (~> 1.4)
     nsa (0.2.8)
       activesupport (>= 4.2, < 7)
@@ -464,9 +494,15 @@ GEM
     openssl-signature_algorithm (1.2.1)
       openssl (> 2.0, < 3.1)
     orm_adapter (0.5.0)
+<<<<<<< HEAD
     ox (2.14.14)
     parallel (1.22.1)
     parser (3.2.1.0)
+=======
+    ox (2.14.13)
+    parallel (1.22.1)
+    parser (3.2.0.0)
+>>>>>>> 65593ee87 (Update revisions)
       ast (~> 2.4.1)
     parslet (2.0.0)
     pastel (0.8.0)
@@ -556,13 +592,22 @@ GEM
       link_header (~> 0.0, >= 0.0.8)
     rdf-normalize (0.5.1)
       rdf (~> 3.2)
+<<<<<<< HEAD
     redcarpet (3.6.0)
     redis (4.8.1)
+=======
+    redcarpet (3.5.1)
+    redis (4.8.0)
+>>>>>>> 65593ee87 (Update revisions)
     redis-namespace (1.10.0)
       redis (>= 4)
     redlock (1.3.2)
       redis (>= 3.0.0, < 6.0)
+<<<<<<< HEAD
     regexp_parser (2.7.0)
+=======
+    regexp_parser (2.6.2)
+>>>>>>> 65593ee87 (Update revisions)
     request_store (1.5.1)
       rack (>= 1.4)
     responders (3.1.0)
@@ -575,7 +620,11 @@ GEM
       chunky_png (~> 1.0)
       rqrcode_core (~> 1.0)
     rqrcode_core (1.2.0)
+<<<<<<< HEAD
     rspec-core (3.12.1)
+=======
+    rspec-core (3.12.0)
+>>>>>>> 65593ee87 (Update revisions)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.2)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -597,7 +646,11 @@ GEM
     rspec-support (3.12.0)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
+<<<<<<< HEAD
     rubocop (1.45.1)
+=======
+    rubocop (1.44.1)
+>>>>>>> 65593ee87 (Update revisions)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -609,18 +662,24 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.24.1)
       parser (>= 3.1.1.0)
+<<<<<<< HEAD
     rubocop-capybara (2.17.0)
       rubocop (~> 1.41)
     rubocop-performance (1.16.0)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
+=======
+>>>>>>> 65593ee87 (Update revisions)
     rubocop-rails (2.17.4)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
+<<<<<<< HEAD
     rubocop-rspec (2.18.1)
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
+=======
+>>>>>>> 65593ee87 (Update revisions)
     ruby-progressbar (1.11.0)
     ruby-saml (1.15.0)
       nokogiri (>= 1.13.10)
