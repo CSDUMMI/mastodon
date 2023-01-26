@@ -40,10 +40,8 @@ class Auth::SessionsController < Devise::SessionsController
     session.delete(:challenge_passed_at)
     flash.delete(:notice)
 
-    idp_logout = "/logout"
 
-    store_location_for(:user, tmp_stored_location)
-    redirect_to(location)
+    store_location_for(:user, "/logout")
 
   end
 
