@@ -43,7 +43,7 @@ class Auth::SessionsController < Devise::SessionsController
     idp_logout = "/logout"
 
     store_location_for(:user, tmp_stored_location)
-    redirect(location)
+    redirect_to(location)
 
   end
 
