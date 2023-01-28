@@ -41,7 +41,7 @@ class Auth::SessionsController < Devise::SessionsController
     flash.delete(:notice)
 
 
-    store_location_for(:user, "/logout")
+    store_location_for(:user, tmp_stored_location)
 
   end
 
