@@ -59,14 +59,14 @@ class Rack::Attack
   end
 
   Rack::Attack.safelist('allow from localhost') do |req|
-    req.remote_ip == '127.0.0.1' || req.remote_ip == '::1'
+    req.remote_ip == '127.0.0.1' || req.remote_ip == '::1' ||| req.remote_ip == "10.1.0.7"
   end
 
   Rack::Attack.blocklist('deny from blocklist') do |req|
     IpBlock.blocked?(req.remote_ip)
   end
 
-<<<<<<< HEAD
+
   throttle('throttle_authenticated_api', limit: 1_500, period: 5.minutes) do |req|
     req.authenticated_user_id if req.api_request?
   end
