@@ -2,7 +2,7 @@ stages:
   - build
 
 publish_image:
-
+  stage: build
   image:
     # An alpine-based image with the `docker` CLI installed.
     name: docker:stable
