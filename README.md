@@ -1,14 +1,13 @@
-#  Mastodon Glitch Edition  #
+#  Mastodon +Babka
+Mastodon +Babka is a fork of Mastodon +Glitch that runs on the [`babka.social`](https://babka.social) instance.
 
->   Now with automated deploys!
+`babka.social` uses an identity provider to manage user accounts and credentials and connects them with Mastodon through the OpenID Connect protocol. We have made a lot of changes to remove bugs with the OpenID Connect integration of Mastodon.
 
-[![Build Status](https://img.shields.io/circleci/project/github/glitch-soc/mastodon.svg)][circleci]
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/glitch-soc/mastodon.svg)][code_climate]
+`babka.social` is deployed on Kubernetes. We continue making changes to Mastodon to deploy it on kubernetes more easily.
 
-[circleci]: https://circleci.com/gh/glitch-soc/mastodon
-[code_climate]: https://codeclimate.com/github/glitch-soc/mastodon
+## Changes
+- `Login or Register` button. Instead of going through a dialog at `/auth/sign_in` users of Mastodon are directly taken to the identity provider upon clicking this button in the Mastodon Web UI. The `Login or Register` button replaces the previous `Sign in` and `Sign Up` buttons in the Web UI.
+- Removal of `hiredis` dependency
+-  
 
-So here's the deal: we all work on this code, and anyone who uses that does so absolutely at their own risk. can you dig it?
-
-- You can view documentation for this project at [glitch-soc.github.io/docs/](https://glitch-soc.github.io/docs/).
-- And contributing guidelines are available [here](CONTRIBUTING.md) and [here](https://glitch-soc.github.io/docs/contributing/).
+## Changes that were merged upstream
