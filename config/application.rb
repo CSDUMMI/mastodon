@@ -39,6 +39,7 @@ require_relative '../lib/public_file_server_middleware'
 require_relative '../lib/devise/two_factor_ldap_authenticatable'
 require_relative '../lib/devise/two_factor_pam_authenticatable'
 require_relative '../lib/chewy/strategy/mastodon'
+require_relative '../lib/chewy/strategy/bypass_with_warning'
 require_relative '../lib/webpacker/manifest_extensions'
 require_relative '../lib/webpacker/helper_extensions'
 require_relative '../lib/rails/engine_extensions'
@@ -122,6 +123,7 @@ module Mastodon
       :ku,
       :kw,
       :la,
+      :lad,
       :lt,
       :lv,
       :mk,

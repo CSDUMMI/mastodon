@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_skin
   helper_method :single_user_mode?
   helper_method :use_seamless_external_login?
+  helper_method :omniauth_only?
+  helper_method :sso_account_settings
   helper_method :whitelist_mode?
   helper_method :omniauth_only?
   helper_method :sso_account_settings
@@ -123,11 +125,11 @@ class ApplicationController < ActionController::Base
   end
 
   def omniauth_only?
-    ENV["OMNIAUTH_ONLY"] == 'true'
+    ENV['OMNIAUTH_ONLY'] == 'true'
   end
 
   def sso_account_settings
-    ENV["SSO_ACCOUNT_SETTINGS"]
+    ENV.fetch('SSO_ACCOUNT_SETTINGS')
   end
 
   def current_account
