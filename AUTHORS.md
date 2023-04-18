@@ -1764,3 +1764,5 @@ Mélanie Chauvel (ariasuni) (*French, Esperanto, Norwegian Nynorsk, Persian, Kab
 - scholzco (*German*)
 - Jari Ronkainen (ronchaine) (*Finnish*)
 - umonaca (*Chinese Simplified*)
+- [ausir](https://meowr.me/@ausir) (*Ladino*)
+
