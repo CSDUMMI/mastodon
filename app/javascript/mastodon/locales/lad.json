@@ -553,6 +553,7 @@
   "server_banner.learn_more": "Saver mas",
   "server_banner.server_stats": "Estatistikas del sirvidor:",
   "sign_in_banner.create_account": "Kriyar kuento",
+  "sign_in_banner.sign_in_or_sign_up": "Konektarse o enrejistrarse",
   "sign_in_banner.sign_in": "Konektarse",
   "sign_in_banner.text": "Konektarse kon kuento para segir profiles o etiketas, markar publikasyones komo favoritos, partajrlas i arispondir a eyas. Tamyen puedes enteraktuar dizde tu kuento en sirvidor desferente.",
   "status.admin_account": "Avrir enterfaz de moderasyon para @{name}",

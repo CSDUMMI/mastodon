@@ -95,6 +95,7 @@ module LanguagesHelper
     kw: ['Cornish', 'Kernewek'].freeze,
     ky: ['Kyrgyz', 'Кыргызча'].freeze,
     la: ['Latin', 'latine'].freeze,
+    lad: ['Ladino (Judeo-Spanish)', 'Ladino (Djudezmo)'].freeze,
     lb: ['Luxembourgish', 'Lëtzebuergesch'].freeze,
     lg: ['Ganda', 'Luganda'].freeze,
     li: ['Limburgish', 'Limburgs'].freeze,

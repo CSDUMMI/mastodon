@@ -1,0 +1,42 @@
+---
+lad:
+  admin:
+    custom_emojis:
+      batch_copy_error: 'Afito un yerro kopiando algunos de los emojis eskojidos: %{message}'
+      batch_error: 'Afito un yerro: %{message}'
+    settings:
+      captcha_enabled:
+        desc_html: Esto uza eskriptos eksternos de hCaptcha, ke pueden ser una ilaka de segurita i privasita. Adisyonalmente, <strong>esto puede fazer el proseso de enrejistrasyon sinyifikamente menos aksesivle para algunas personas (espesialmente diskapasitadas)</strong>. Por estas razones, por favor konsidera opsyones alternativas, komo enrejistrasyon kon achetasyon de administradores o solo kon envitasyon.<br>Utilizadores envitados kon una envitasyon de uzo limitado no tendran menester de solver un CAPTCHA
+        title: Rekerir ke muveos utilizadores resolven un CAPTCHA para konfirmar su kuento
+      flavour_and_skin:
+        title: Savor i tema
+      hide_followers_count:
+        desc_html: No amostrar el numero de suivantes en los profiles de utilizadores
+        title: Eskonder numero de suivantes
+      other:
+        preamble: Varias preferensyas de glitch-soc las kualas no kaven en las otras kategorias.
+        title: Otros
+      outgoing_spoilers:
+        desc_html: Kuando las publikasyones federen, adjusta esta avertensya de kontenido a las publikasyones ke no tienen una. Es util si tu sirvidor se espesyaliza en kontenido ke otros sirvidores pueden tener kon una avertensya. Multimedia tambien se markaran komo sensivles.
+        title: Avertensyas de kontenido para publikasyones salientes
+      show_reblogs_in_public_timelines:
+        desc_html: Amostrar repartajasyones publikas de publikasyones publikas en linyas de tiempo lokalas i publikas.
+        title: Amostrar repartajasyones en linyas publikas
+      show_replies_in_public_timelines:
+        desc_html: Ademas de autorepuestas publikas (filos), amostra repuestas publikas en linyas de tiempo lokalas i publikas.
+        title: Amostrar repuestas en linyas de tiempo publikas
+      trending_status_cw:
+        desc_html: Kuando publikasyones en trendes son kapasitadas, permite ke publikasyones kon avertensyas de kontenido aparezkan en eyas. Trokamientos de esta preferensya no son retroaktivas.
+        title: Permitir publikasyones kon avertensyas de kontenido en trendes
+  appearance:
+    localization:
+      glitch_guide_link: https://crowdin.com/project/glitch-soc
+      glitch_guide_link_text: I tamyen a glitch-soc!
+  auth:
+    captcha_confirmation:
+      hint_html: Solo un paso mas! Para konfirmar tu kuento en este sirvidor kale ke konfirmes un CAPTCHA. Puedes <a href="/about/more">kontaktar al administrador del sirvidor</a> si tienes demandas o nesesitas ayudo kon konfirmasyon de tu kuento.
+      title: Verifikasyon de utilizador
+  generic:
+    use_this: Uzar esto
+  settings:
+    flavours: Savores

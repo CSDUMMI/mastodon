@@ -1,0 +1,27 @@
+---
+lad:
+  simple_form:
+    glitch_only: glitch-soc
+    hints:
+      defaults:
+        fields: Pudes tener asta %{count} elementos amostrados komo tavla en tu profil
+        setting_default_content_type_html: Al eskrivir publikasyones, asume ke estan eskritas en HTML, a manko ke espesifikes lo kontrario
+        setting_default_content_type_markdown: Al eskrivir publikasyones, asume ke estan eskritas komo Markdown para uzar formato de teksto riko, a manko ke que espesifikes lo kontrario
+        setting_default_content_type_plain: Al eskrivir publikasyones, asume ke estan eskritas sin formato, a manko ke que espesifikes lo kontrario (predeterminado de Mastodon)
+        setting_default_language: La lingua de tus publikasyones puede ser detektada otomatikamente, pero no siempre es korekta
+        setting_hide_followers_count: Eskonder tu numero de suivantes de todos, tamye de ti. Algunas aplikasyones pueden amostrar un numero de suivantes negativo.
+        setting_skin: Trokar el tema de la savor eskojida de Mastodon
+    labels:
+      defaults:
+        setting_default_content_type: Formato predeterminado de tus publikasyones
+        setting_default_content_type_html: HTML
+        setting_default_content_type_markdown: Markdown
+        setting_default_content_type_plain: Sin formato
+        setting_favourite_modal: Amostrar dialogo de konfirmasyon antes de indikar ke algo te plaze (solo aplikado al savor Glitch)
+        setting_hide_followers_count: Eskonder tu numero de suivantes
+        setting_skin: Tema
+        setting_system_emoji_font: Uzar el font predeterminado para emojis (solo aplikado al savor Glitch)
+      notification_emails:
+        trending_link: Kale ke revizar un atadijo muevo en trend
+        trending_status: Kale ke revizar una publikasyon mueva en trend
+        trending_tag: Kale ke revizar una etiketa mueva en trend

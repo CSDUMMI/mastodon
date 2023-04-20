@@ -1010,7 +1010,7 @@ lad:
         other: "%{count} mezes"
       x_years:
         one: 1 anyo
-        other: "%{count} anyos"  
+        other: "%{count} anyos"
       x_seconds:
         one: 1 sigundo
         other: "%{count} sigundos"
@@ -1529,6 +1529,7 @@ lad:
     strikes: Amonestamientos de moderasyon
     two_factor_authentication: Autentifikasyon en dos pasos
     webauthn_authentication: Yaves de sigurita
+    goto_sso_account_settings: Ir a las preferensyas de SSO
   statuses:
     attached:
       audio:
