@@ -29,7 +29,7 @@ lad:
       edit:
         title: Editar aplikasyon
       form:
-        error: Guay! Komprova tu formulario
+        error: Atyo! Komprova tu formulario
       help:
         native_redirect_uri: Utiliza %{native_redirect_uri} para provas lokalas
         redirect_uri: Uza una linya por URI
