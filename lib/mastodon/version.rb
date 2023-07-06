@@ -13,11 +13,11 @@ module Mastodon
     end
 
     def patch
-      2
+      3
     end
 
     def flags
-      ''
+      ENV.fetch('MASTODON_VERSION_FLAGS', '')
     end
 
     def suffix

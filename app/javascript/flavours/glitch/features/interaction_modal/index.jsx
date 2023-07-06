@@ -1,24 +1,31 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { PureComponent } from 'react';
+
 import { FormattedMessage } from 'react-intl';
-import { registrationsOpen, OMNIAUTH_ONLY, REGISTRATIONS_REDIRECT_URI } from 'flavours/glitch/initial_state';
-import { connect } from 'react-redux';
-import Icon from 'flavours/glitch/components/icon';
+import { registrationsOpen, OMNIAUTH_ONLY } from 'flavours/glitch/initial_state';
 import classNames from 'classnames';
+
+import { connect } from 'react-redux';
+
 import { openModal, closeModal } from 'flavours/glitch/actions/modal';
+import { Icon } from 'flavours/glitch/components/icon';
 
 const mapStateToProps = (state, { accountId }) => ({
   displayNameHtml: state.getIn(['accounts', accountId, 'display_name_html']),
+  signupUrl: state.getIn(['server', 'server', 'registrations', 'url'], null) || '/auth/sign_up',
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onSignupClick() {
-    dispatch(closeModal());
-    dispatch(openModal('CLOSED_REGISTRATIONS'));
+    dispatch(closeModal({
+      modalType: undefined,
+      ignoreFocus: false,
+    }));
+    dispatch(openModal({ modalType: 'CLOSED_REGISTRATIONS' }));
   },
 });
 
-class Copypaste extends React.PureComponent {
+class Copypaste extends PureComponent {
 
   static propTypes = {
     value: PropTypes.string,
@@ -74,13 +81,14 @@ class Copypaste extends React.PureComponent {
 
 }
 
-class InteractionModal extends React.PureComponent {
+class InteractionModal extends PureComponent {
 
   static propTypes = {
     displayNameHtml: PropTypes.string,
     url: PropTypes.string,
     type: PropTypes.oneOf(['reply', 'reblog', 'favourite', 'follow']),
     onSignupClick: PropTypes.func.isRequired,
+    signupUrl: PropTypes.string.isRequired,
   };
 
   handleSignupClick = () => {
@@ -88,7 +96,7 @@ class InteractionModal extends React.PureComponent {
   };
 
   render () {
-    const { url, type, displayNameHtml } = this.props;
+    const { url, type, displayNameHtml, signupUrl } = this.props;
 
     const name = <bdi dangerouslySetInnerHTML={{ __html: displayNameHtml }} />;
 
@@ -118,12 +126,12 @@ class InteractionModal extends React.PureComponent {
     }
 
     let signupButton;
-    let signupLink = (OMNIAUTH_ONLY && REGISTRATIONS_REDIRECT_URI) ? REGISTRATIONS_REDIRECT_URI : "/auth/sign_up";
     let signinLink = OMNIAUTH_ONLY ? "/auth/auth/openid_connect" : "/auth/sign_in";
+    let signupLink = OMNIAUTH_ONLY ? signinLink : "/auth/sign_up";
 
     if (registrationsOpen) {
       signupButton = (
-        <a href='{signupLink}' className='button button--block button-tertiary'>
+        <a href={signupLink} className='button button--block button-tertiary'>
           <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
         </a>
       );

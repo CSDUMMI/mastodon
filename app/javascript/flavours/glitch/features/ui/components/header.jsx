@@ -1,13 +1,19 @@
-import React from 'react';
-import Logo from 'flavours/glitch/components/logo';
-import { Link, withRouter } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-import { registrationsOpen, me, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
-import Avatar from 'flavours/glitch/components/avatar';
-import Permalink from 'flavours/glitch/components/permalink';
 import PropTypes from 'prop-types';
+import { PureComponent } from 'react';
+
+import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+
+import { Link, withRouter } from 'react-router-dom';
+
 import { connect } from 'react-redux';
+
 import { openModal } from 'flavours/glitch/actions/modal';
+import { fetchServer } from 'flavours/glitch/actions/server';
+import { Avatar } from 'flavours/glitch/components/avatar';
+import { Icon } from 'flavours/glitch/components/icon';
+import { WordmarkLogo, SymbolLogo } from 'flavours/glitch/components/logo';
+import Permalink from 'flavours/glitch/components/permalink';
+import { registrationsOpen, me, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
 
 const Account = connect(state => ({
   account: state.getIn(['accounts', me]),
@@ -17,13 +23,24 @@ const Account = connect(state => ({
   </Permalink>
 ));
 
-const mapDispatchToProps = (dispatch) => ({
-  openClosedRegistrationsModal() {
-    dispatch(openModal('CLOSED_REGISTRATIONS'));
-  },
+const messages = defineMessages({
+  search: { id: 'navigation_bar.search', defaultMessage: 'Search' },
 });
 
-class Header extends React.PureComponent {
+const mapStateToProps = (state) => ({
+  signupUrl: state.getIn(['server', 'server', 'registrations', 'url'], null) || '/auth/sign_up',
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  openClosedRegistrationsModal() {
+    dispatch(openModal({ modalType: 'CLOSED_REGISTRATIONS' }));
+  },
+  dispatchServer() {
+    dispatch(fetchServer());
+  }
+});
+
+class Header extends PureComponent {
 
   static contextTypes = {
     identity: PropTypes.object,
@@ -32,11 +49,19 @@ class Header extends React.PureComponent {
   static propTypes = {
     openClosedRegistrationsModal: PropTypes.func,
     location: PropTypes.object,
+    signupUrl: PropTypes.string.isRequired,
+    dispatchServer: PropTypes.func,
+    intl: PropTypes.object.isRequired,
   };
+
+  componentDidMount () {
+    const { dispatchServer } = this.props;
+    dispatchServer();
+  }
 
   render () {
     const { signedIn } = this.context.identity;
-    const { location, openClosedRegistrationsModal } = this.props;
+    const { location, openClosedRegistrationsModal, signupUrl, intl } = this.props;
 
     let content;
 
@@ -68,7 +93,10 @@ class Header extends React.PureComponent {
 
     return (
       <div className='ui__header'>
-        <Link to='/' className='ui__header__logo'><Logo /></Link>
+        <Link to='/' className='ui__header__logo'>
+          <WordmarkLogo />
+          <SymbolLogo />
+        </Link>
 
         <div className='ui__header__links'>
           {content}
@@ -79,4 +107,4 @@ class Header extends React.PureComponent {
 
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(Header));
+export default injectIntl(withRouter(connect(mapStateToProps, mapDispatchToProps)(Header)));

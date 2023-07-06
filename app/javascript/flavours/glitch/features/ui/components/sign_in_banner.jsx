@@ -1,18 +1,14 @@
-/**
- *  Sign in banner is only used in three-column  view of the web page.
- * For the sign in and sign up buttons in the single column view, see header.js in this same folder.
- */
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useDispatch } from 'react-redux';
-import { registrationsOpen, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
 import { openModal } from 'flavours/glitch/actions/modal';
+import { registrationsOpen, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
+import { useAppDispatch, useAppSelector } from 'flavours/glitch/store';
 
 const SignInBanner = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const openClosedRegistrationsModal = useCallback(
-    () => dispatch(openModal('CLOSED_REGISTRATIONS')),
+    () => dispatch(openModal({ modalType: 'CLOSED_REGISTRATIONS' })),
     [dispatch],
   );
 
@@ -27,7 +23,6 @@ const SignInBanner = () => {
       </>
     );
   } else {
-
     let signupButton;
 
     if (registrationsOpen) {
@@ -55,7 +50,7 @@ const SignInBanner = () => {
         </a>
         {signupButton}
         </>
-    );
+    )
   }
 
   return (
