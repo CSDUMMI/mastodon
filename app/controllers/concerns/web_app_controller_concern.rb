@@ -11,10 +11,6 @@ module WebAppControllerConcern
     vary_by 'Accept, Accept-Language, Cookie'
   end
 
-  def skip_csrf_meta_tags?
-    current_user.nil?
-  end
-
   def set_app_body_class
     @body_classes = 'app-body'
   end
