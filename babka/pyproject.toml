@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "babka"
+version = "0.1.0"
+description = ""
+authors = ["CSDUMMI <csdummi.misquality@simplelogin.co>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.4.0"
+selenium = "^4.10.0"
+
+[tool.poetry.scripts]
+test = "pytest"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
