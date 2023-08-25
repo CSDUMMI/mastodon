@@ -21,6 +21,13 @@ class TranslationService
     ENV['DEEPL_API_KEY'].present? || ENV['LIBRE_TRANSLATE_ENDPOINT'].present?
   end
 
+  def is_libre_translate?
+    ENV["LIBRE_TRANSLATE_API_KEY"].present?
+  end
+  def is_deepl?
+    ENV['DEEPL_API_KEY'].present?
+  end
+
   def languages
     {}
   end
