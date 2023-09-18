@@ -24,6 +24,7 @@ $ git remote add glitch-soc https://github.com/glitch-soc/mastodon.git
 $ git fetch glitch-soc
 $ git checkout babka
 $ git pull
+$ git fetch glitch-soc
 ```
 
 ### Updating by merge
@@ -34,6 +35,8 @@ $ git merge glitch-soc/main
 
 There will be a few merge conflicts relating to features added by Mastodon +Babka.
 Unless a feature of Mastodon +Babka has recently been merged into Mastodon (or Glitch), you should pick Mastodon +Babka's changes when in doubt.
+
+If you get lost, `git status` and `meld` are your friend.
 
 ### Updating by rebase
 An alternative, but slower method of updating Mastodon +Babka is using a rebase:
