@@ -27,6 +27,7 @@ const SignInBanner = () => {
 
   if (registrationsOpen) {
     signupButton = (
+      <>
       <a href={signupUrl} className='button button--block'>
         <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
       </a>
