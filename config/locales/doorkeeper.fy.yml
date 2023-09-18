@@ -184,7 +184,7 @@ fy:
       write:blocks: accounts en domeinen blokkearje
       write:bookmarks: berjochten oan blêdwizers tafoegje
       write:conversations: petearen negearre en fuortsmite
-      write:favourites: berjochten as favoryt markearje
+      write:favourites: favorite berjochten
       write:filters: filters oanmeitsje
       write:follows: minsken folgje
       write:lists: listen oanmeitsje

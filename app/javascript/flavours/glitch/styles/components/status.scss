@@ -175,8 +175,7 @@
 
 .notif-cleaning {
   .status,
-  .notification-follow,
-  .notification-follow-request {
+  .notification {
     padding-inline-end: ($dismiss-overlay-width + 0.5rem);
   }
 }
@@ -363,8 +362,8 @@
 
     &.status-direct > .status__content::after {
       background: linear-gradient(
-        rgba(lighten($ui-base-color, 8%), 0),
-        rgba(lighten($ui-base-color, 8%), 1)
+        rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0),
+        rgba(mix($ui-base-color, $ui-highlight-color, 95%), 1)
       );
     }
 

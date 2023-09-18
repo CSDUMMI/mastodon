@@ -315,6 +315,7 @@ sl:
       unpublish: Umakni iz objave
       unpublished_msg: Obvestilo je bilo uspešno umaknjeno!
       updated_msg: Obvestilo je bilo uspešno posodobljeno!
+    critical_update_pending: Nujna posodobitev v teku
     custom_emojis:
       assign_category: Dodeli kategorijo
       by_domain: Domena
@@ -399,6 +400,8 @@ sl:
       confirm_suspension:
         cancel: Prekliči
         confirm: Suspendiraj
+        permanent_action: Z razveljavitvijo suzpenza ne boste obnovili nobenih podatkov ali razmerij.
+        remove_all_data: S tem boste odstranili celotno vsebino, medijske vsebine ter podatke iz profila za rčune te domene na vašem strežniku.
         stop_communication: Vaš strežnik bo prenehal komunicirati s temi strežniki.
         title: Potrdi domenski blok za %{domain}
       created_msg: Domenski blok se sedaj obdeluje
@@ -791,10 +794,23 @@ sl:
           approved: Potrebna je odobritev za prijavo
           none: Nihče se ne more prijaviti
           open: Vsakdo se lahko prijavi
+      security:
+        authorized_fetch_overridden_hint: Trenutno ne morete spremeniti te nastavitve, ker jo preglasi okoljska spremenljivka.
       title: Nastavitve strežnika
     site_uploads:
       delete: Izbriši naloženo datoteko
       destroyed_msg: Prenos na strežnik uspešno izbrisan!
+    software_updates:
+      critical_update: Kritično — čim prej posodobite
+      documentation_link: Več o tem
+      release_notes: Opombe ob izdaji
+      title: Razpoložljive posodobitve
+      type: Vrsta
+      types:
+        major: Osrednja izdaja
+        minor: Izdaja z manjšimi spremembami
+        patch: Izdaja popravkov - popravki hroščev in enostavne spremembe v kodi
+      version: Različica
     statuses:
       account: Avtor
       application: Program
@@ -835,6 +851,10 @@ sl:
     system_checks:
       database_schema_check:
         message_html: Na čakanju so migracije zbirke podatkov. Prosimo, izvedite jih, da zagotovite, da se program vede pričakovano
+      elasticsearch_preset:
+        action: Glejte dokumentacijo
+      elasticsearch_preset_single_node:
+        action: Glejte dokumentacijo
       elasticsearch_running_check:
         message_html: Povezava z Elasticsearch ni uspela. Preverite, da deluje, ali onemogočite iskanje po vsem besedilu
       elasticsearch_version_check:
@@ -845,6 +865,10 @@ sl:
         message_html: Nobenih pravil strežnika niste določili.
       sidekiq_process_check:
         message_html: Noben proces Sidekiq ne poteka za %{value} vrst. Preglejte svojo prilagoditev Sidekiq
+      software_version_critical_check:
+        action: Glejte razpoložljive posodobitve
+      software_version_patch_check:
+        action: Glejte razpoložljive posodobitve
       upload_check_privacy_error:
         action: Preverite tukaj za več informacij
         message_html: "<strong>Vaš spletni strežnik je napačno nastavljen. Zasebnost vaših uporabnikov je izpostavljena tveganjem.</strong>"
@@ -1002,7 +1026,6 @@ sl:
       guide_link: https://crowdin.com/project/mastodon
       guide_link_text: Vsakdo lahko prispeva.
     sensitive_content: Občutljiva vsebina
-    toot_layout: Postavitev objave
   application_mailer:
     notification_preferences: Spremenite e-poštne nastavitve
     salutation: "%{name},"
@@ -1086,18 +1109,6 @@ sl:
       view_strikes: Pokaži pretekle ukrepe proti mojemu računu
     too_fast: Obrazec oddan prehitro, poskusite znova.
     use_security_key: Uporabi varnostni ključ
-  authorize_follow:
-    already_following: Temu računu že sledite
-    already_requested: Temu računu ste že poslali zahtevo po sledenju
-    error: Na žalost je prišlo do napake pri iskanju oddaljenega računa
-    follow: Sledi
-    follow_request: 'Prošnjo za sledenje se poslali:'
-    following: 'Uspeh! Zdaj sledite:'
-    post_follow:
-      close: Lahko pa tudi zaprete to okno.
-      return: Prikaži uporabnikov profil
-      web: Pojdi na splet
-    title: Sledi %{acct}
   challenge:
     confirm: Nadaljuj
     hint_html: "<strong>Namig:</strong> naslednjo uro vas ne bomo več vprašali po vašem geslu."
@@ -1177,7 +1188,6 @@ sl:
   edit_profile:
     basic_information: Osnovni podatki
     other: Drugo
-    safety_and_privacy: Varnost in zasebnost
   errors:
     '400': Zahteva, ki ste jo oddali, je neveljavna ali nepravilno oblikovana.
     '403': Nimate dovoljenja za ogled te strani.
@@ -1326,13 +1336,18 @@ sl:
       bookmarks: Uvažanje zaznamkov
       domain_blocking: Uvažanje blokiranih domen
       following: Uvažanje sledenih računov
+      lists: Uvažanje seznamov
       muting: Uvažanje utišanih računov
     type: Vrsta uvoza
+    type_groups:
+      constructive: Sledenje in zaznamki
+      destructive: Blokiranja in utišanja
     types:
       blocking: Seznam blokiranih
       bookmarks: Zaznamki
       domain_blocking: Seznam blokiranih domen
       following: Seznam uporabnikov, katerim sledite
+      lists: Seznami
       muting: Seznam utišanih
     upload: Pošlji
   invites:
@@ -1375,6 +1390,16 @@ sl:
     title: Zgodovina overjanja
   mail_subscriptions:
     unsubscribe:
+      action: Da, odjavi me
+      complete: Odjavljeni
+      emails:
+        notification_emails:
+          favourite: e-sporočil z obvestili o priljubljenosti
+          follow: e-sporočil z obvestili o sledenju
+          follow_request: e-sporočil o zahtevah za sledenje
+          mention: e-sporočil z obvestili o omembah
+          reblog: e-sporočil z obvestili o izpostavljanju
+      success_html: Nič več ne boste prejemali %{type} za Mastodon na %{domain} na svoj e-naslov %{email}.
       title: Odjavi od naročnine
   media_attachments:
     validations:
@@ -1455,6 +1480,7 @@ sl:
     update:
       subject: "%{name} je uredil(a) objavo"
   notifications:
+    administration_emails: E-poštna obvestila skrbnika
     email_events: Dogodki za e-obvestila
     email_events_hint: 'Izberite dogodke, za katere želite prejmati obvestila:'
     other_settings: Druge nastavitve obvestil
@@ -1498,6 +1524,11 @@ sl:
     other: Ostalo
     posting_defaults: Privzete nastavitev objavljanja
     public_timelines: Javne časovnice
+  privacy:
+    privacy: Zasebnost
+    reach: Dosegljivost
+    search: Iskanje
+    title: Zasebnost in dosegljivost
   privacy_policy:
     title: Pravilnik o zasebnosti
   reactions:
@@ -1659,7 +1690,6 @@ sl:
     show_newer: Pokaži novejše
     show_older: Pokaži starejše
     show_thread: Pokaži nit
-    sign_in_to_participate: Prijavite se, če želite sodelovati v pogovoru
     title: "%{name}: »%{quote}«"
     visibilities:
       direct: Neposredno
@@ -1705,8 +1735,6 @@ sl:
     min_reblogs: Obdrži objave izpostavljene vsaj
     min_reblogs_hint: Ne izbriše nobene od vaših objav, ki je bila vsaj tolikokrat podprta. Pustite prazno, če želite izbrisati objave ne glede na število izpostavitev
   stream_entries:
-    pinned: Pripeta objava
-    reblogged: izpostavljeno
     sensitive_content: Občutljiva vsebina
   strikes:
     errors:
@@ -1722,6 +1750,7 @@ sl:
       default: "%b %d %Y, %H:%M"
       month: "%b %Y"
       time: "%H:%M"
+      with_time_zone: "%d.  %b. %Y %H:%M %Z"
   two_factor_authentication:
     add: Dodaj
     disable: Onemogoči
@@ -1808,6 +1837,7 @@ sl:
     signed_in_as: 'Vpisani kot:'
   verification:
     here_is_how: Kako to poteka
+    instructions_html: Spodnjo kodo kopirajte in prilepite v HTML svojega spletnega mesta. Nato dodajte naslov svoje spletne strani v eno od dodatnih polj v svojem profilu v zavihku »Uredi profil« in shranite spremembe.
     verification: Potrditev
     verified_links: Vaše preverjene povezave
   webauthn_credentials:

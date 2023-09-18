@@ -13,7 +13,7 @@ import { Avatar } from 'flavours/glitch/components/avatar';
 import { Icon } from 'flavours/glitch/components/icon';
 import { WordmarkLogo, SymbolLogo } from 'flavours/glitch/components/logo';
 import Permalink from 'flavours/glitch/components/permalink';
-import { registrationsOpen, me, OMNIAUTH_ONLY, SIGN_IN_LINK } from 'flavours/glitch/initial_state';
+import { registrationsOpen, me, sso_redirect } from 'flavours/glitch/initial_state';
 
 const Account = connect(state => ({
   account: state.getIn(['accounts', me]),
@@ -65,27 +65,41 @@ class Header extends PureComponent {
 
     let content;
 
-    if(OMNIAUTH_ONLY && !signedIn) {
-        content = (
-          <>
-          <a href={SIGN_IN_LINK} data-method='post' rel='nofollow' className='button'><FormattedMessage id='sign_in_banner.sign_in_or_sign_up' defaultMessage='Login or Register' /></a>
-          </>
-        )
-
+    if (signedIn) {
+      content = (
+        <>
+          {location.pathname !== '/search' && <Link to='/search' className='button button-secondary' aria-label={intl.formatMessage(messages.search)}><Icon id='search' /></Link>}
+          {location.pathname !== '/publish' && <Link to='/publish' className='button button-secondary'><FormattedMessage id='compose_form.publish_form' defaultMessage='New post' /></Link>}
+          <Account />
+        </>
+      );
     } else {
 
-      if (signedIn) {
+      if (sso_redirect) {
         content = (
-          <>
-            {location.pathname !== '/publish' && <Link to='/publish' className='button'><FormattedMessage id='compose_form.publish' defaultMessage='Publish' /></Link>}
-            <Account />
-          </>
-        );
+            <a href={sso_redirect} data-method='post' className='button button--block button-tertiary'><FormattedMessage id='sign_in_banner.sso_redirect' defaultMessage='Login or Register' /></a>
+        )
       } else {
+        let signupButton;
+
+        if (registrationsOpen) {
+          signupButton = (
+            <a href={signupUrl} className='button'>
+              <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
+            </a>
+          );
+        } else {
+          signupButton = (
+            <button className='button' onClick={openClosedRegistrationsModal}>
+              <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
+            </button>
+          );
+        }
+
         content = (
           <>
-            <a href="/auth/sign_in" className='button'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
-            <a href={registrationsOpen ? "/auth/sign_up" : 'https://joinmastodon.org/servers'} className='button button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
+            {signupButton}
+            <a href='/auth/sign_in' className='button button-tertiary'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Login' /></a>
           </>
         );
       }

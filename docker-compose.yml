@@ -95,7 +95,11 @@ services:
 
   sidekiq:
     build: .
+<<<<<<< HEAD
     image: registry.gitlab.com/babka_net/mastodon-babka:v4.1.1-babka-2023-03-18
+=======
+    image: ghcr.io/mastodon/mastodon:v4.1.6
+>>>>>>> glitch-soc/main
     restart: always
     env_file: .env.production
     command: bundle exec sidekiq
