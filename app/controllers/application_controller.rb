@@ -76,6 +76,10 @@ class ApplicationController < ActionController::Base
     redirect_to edit_user_registration_path unless current_user.functional?
   end
 
+  def skip_csrf_meta_tags?
+    false
+  end
+
   def after_sign_out_path_for(_resource_or_scope)
     if ENV['OMNIAUTH_ONLY'] == 'true' && ENV['OIDC_ENABLED'] == 'true'
       '/auth/auth/openid_connect/logout'
