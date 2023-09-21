@@ -25,6 +25,7 @@ const SignInBanner = () => {
     )
   }
 
+  let signupButton;
   if (registrationsOpen) {
     signupButton = (
       <>
