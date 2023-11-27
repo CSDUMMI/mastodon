@@ -47,6 +47,9 @@ $ git rebase glitch-soc/main
 The disadvantage here is (besides the wider debate about rebase v. merge) is that it will take longer as rebase goes through the past commit history and prompts you to solve conflicts in each, while merge will only prompt you with these once.
 
 
+### Dealing with conflicts in Gemfile.lock
+Often these conflicts occur because of some updated dependency. It is advised to always either keep the old or new version of this file and not to mix them.
+
 **After an update: Follow the upgrade procedure (below) with the new mastodon version.**
 
 ## Uprading
