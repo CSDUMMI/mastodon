@@ -6,15 +6,28 @@ class TranslateStatusService < BaseService
   include ERB::Util
   include FormattingHelper
 
-  def call(status, target_language)
+  ##
+  # Creates a translation of a status.
+  # Translations are cached in Redis.
+  # If ALWAYS_AUTO_DETECT_LANGUAGE environment variable is true,
+  # the source language defined in the status will be disregarded
+  def call(status, target_language, always_auto_detect = nil)
     @status = status
     @source_texts = source_texts
     @target_language = target_language
 
     raise Mastodon::NotPermittedError unless permitted?
 
-    status_translation = Rails.cache.fetch("v2:translations/#{@status.language}/#{@target_language}/#{content_hash}", expires_in: CACHE_TTL) do
-      translations = translation_backend.translate(@source_texts.values, @status.language, @target_language)
+    if always_auto_detect.nil? then
+      always_auto_detect = ENV.fetch('ALWAYS_AUTO_DETECT_LANGUAGE') == 'true'
+    end
+
+    if !always_auto_detect then
+      source_language = @status.language
+    end
+
+    status_translation = Rails.cache.fetch("v2:translations/#{source_language}/#{@target_language}/#{content_hash}", expires_in: CACHE_TTL) do
+      translations = translation_backend.translate(@source_texts.values, source_language, @target_language)
       build_status_translation(translations)
     end
 
