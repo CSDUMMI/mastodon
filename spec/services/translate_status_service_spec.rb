@@ -231,4 +231,12 @@ RSpec.describe TranslateStatusService, type: :service do
       end
     end
   end
+
+  describe 'always auto detect language in status' do
+    it 'detects language as english automatically' do
+      rus_status = Fabricate(:status, text: "доброе утро", spoiler_text: spoiler_text, language: 'en', preloadable_poll: poll, media_attachments: media_attachments)
+
+      expect(service.call(status, 'en', always_auto_detect=true).content).to eq '<p>Good morning</p>'
+    end
+  end
 end
